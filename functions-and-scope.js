@@ -54,16 +54,16 @@ console.log("\n");
 // cumLaude([6, 4, 5]) geeft 0
 // cumLaude([8, 9, 4, 6, 10]) geeft 3
 
-function cumLaude(arr) {
-    let sum = 0;
-    for (let i = 0; i < grades.length; i++) {
-        if (grades[i] >= 8) {
-            sum++;
-
-        }
-    }
-}
-cumLaude(grades);
+// function cumLaude(arr) {
+//     let sum = 0;
+//     for (let i = 0; i < grades.length; i++) {
+//         if (grades[i] >= 8) {
+//             sum++;
+//
+//         }
+//     }
+// }
+// cumLaude(grades);
 
 
 
