@@ -9,17 +9,42 @@
 // getEmailDomain("t.mellink@novi.nl") geeft novi.nl
 // getEmailDomain("a.wiersma@outlook.com") geeft outlook.com
 
+function getEmailDomain(emailadres) {
+   const domeinnaam = emailadres.substring(emailadres.lastIndexOf("@") + 1);
+    return domeinnaam
+}
 
+console.log(getEmailDomain("n.eeken@novi-education.nl"));
+console.log(getEmailDomain("t.mellink@novi.nl"));
+console.log(getEmailDomain("a.wiersma@outlook.com"));
 
 
 /* Opdracht  2 */
-// Schrijf een functie genaamd typeOfEmail, die een emailadres verwacht. De functie checkt of het emailadres een novi domein heeft (medewerker), een novi-education domein (student), of extern domein (zoals gmail of outlook)
+// Schrijf een functie genaamd typeOfEmail, die een emailadres verwacht. De functie checkt of het emailadres een
+// novi domein heeft (medewerker), een novi-education domein (student), of extern domein (zoals gmail of outlook)
 // ---- Verwachte uitkomsten:
 // typeOfEmail("n.eeken@novi-education.nl") geeft "Student"
 // typeOfEmail("t.mellink@novi.nl") geeft geeft "Medewerker"
 // typeOfEmail("novi.nlaapjesk@outlook.com") geeft geeft "Extern" <-- deze moet het ook doen!
 // typeOfEmail("a.wiersma@outlook.com") geeft "Extern"
 
+function typeOfEmail(email){
+    //Student= novi-education.nl//Medewerker= novi.nl//Extern = gmail of outlook
+    const student = "novi-education.nl"
+    const medewerker = "novi.nl"
+
+    if (medewerker == getEmailDomain(email)){
+        return "medewerker"
+    } else if(student == getEmailDomain(email)) {
+        return "student"
+    } else {
+        return "Extern"
+    }
+}
+console.log(typeOfEmail("n.eeken@novi-education.nl"));
+console.log(typeOfEmail("t.mellink@novi.nl"));
+console.log(typeOfEmail("novi.nlaapjesk@outlook.com"));
+console.log(typeOfEmail("a.wiersma@outlook.com"));
 
 
 /* Opdracht  3 */
@@ -34,3 +59,34 @@
 // checkEmailValidity("n.eekenanovi.nl") geeft false - want geen @
 // checkEmailValidity("n.eeken@novinl.") geeft false - want de punt mag niet als laatst
 // checkEmailValidity("tessmellink@novi,nl") geeft false - want er staat een komma in
+
+function checkEmailValidity(emailAdress){
+    if (emailAdress.includes(",")){
+        return "False";
+
+    }else if (emailAdress.charAt(emailAdress.length -1) === "."){
+        return "False";
+
+    }else if (!emailAdress.includes("@")) {
+        return "False";
+    }
+    return "is true"
+}
+
+
+// function checkEmailValidity(emailAdress){
+//     switch (emailAdress){
+//         case emailAdress.includes("@");
+//         console.log("True");
+//         break
+//         case emailAdress.includes(",");
+//         break
+//         case emailAdress.lastIndexOf(".");
+//     }
+// }
+
+console.log(checkEmailValidity("n.eeken@novi.nl"));
+console.log(checkEmailValidity("tessmellink@novi.nl"));
+console.log(checkEmailValidity("n.eekenanovi.nl"));
+console.log(checkEmailValidity("n.eeken@novinl."));
+console.log(checkEmailValidity("tessmellink@novi,nl"));
