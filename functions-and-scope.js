@@ -27,18 +27,27 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // }
 // console.log("\n");
 
+let cumlaude = 0
 
-function orderDiplomas(arr) {
-    let sum = 0;
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] >= 8) {
-            sum++;
-        }
+for (let i = 0 ; i < grades.length; i++){
+    if (grades[i] >= 8){
+        cumlaude ++
     }
-    console.log('Er moeten ' + sum + ' diploma\'s besteld worden. ');
 }
-orderDiplomas(grades);
+console.log(cumlaude);
 console.log("\n");
+
+//
+// function orderDiplomas(arr) {
+//     let sum = 0;
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i] >= 8) {
+//             sum++;
+//         }
+//     }
+//     console.log('Er moeten ' + sum + ' diploma\'s besteld worden. ');
+// }
+// orderDiplomas(grades);
 
 
         /*  1b: Omschrijven tot een herbruikbare functie   */
@@ -52,6 +61,18 @@ console.log("\n");
 // cumLaude(grades) geeft 6
 // cumLaude([6, 4, 5]) geeft 0
 // cumLaude([8, 9, 4, 6, 10]) geeft 3
+
+function orderDiplomas(arr) {
+    let cumlaude = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] >= 8) {
+            cumlaude++;
+        }
+    }
+    console.log('Er moeten ' + cumlaude + ' diploma\'s besteld worden. ');
+}
+console.log(orderDiplomas(grades));
 
 
 // function cumLaude(arr) {
@@ -77,7 +98,6 @@ console.log("\n");
 // Log het antwoord in de terminal.
 
         let sum1 = 0
-
         for (let i = 0; i < grades.length; i++) {
             sum1 += grades[i];
         }
@@ -104,26 +124,30 @@ console.log("\n");
             for (let i = 0; i < arr.length; i++) {
                 sum += arr[i];
             }
-            console.log(sum / arr.length);
+            console.log((sum / arr.length).toFixed(2));
         }
 
-        averageGrade(grades);
+        console.log(averageGrade(grades));
+
         console.log("\n");
+
 
         /* 2c: Afronden op twee decimalen */
 // Zorg ervoor dat het gemiddelde cijfer dat wordt teruggegeven uit de functie netjes wordt afgerond op twee decimalen.
 // Tip: Google is your best friend!
-
-        function averageGrade1(arr) {
-            let sum = 0;
-            for (let i = 0; i < arr.length; i++) {
-                sum += arr[i];
-            }
-            console.log((sum / arr.length).toFixed(2));
-        }
-
-        averageGrade1(grades);
-        console.log("\n");
+//
+//         function averageGrade1(arr) {
+//             let sum = 0;
+//             for (let i = 0; i < arr.length; i++) {
+//                 sum += arr[i];
+//             }
+//             console.log((sum / arr.length).toFixed(2));
+//         }
+//
+//         averageGrade1(grades);
+//
+//
+//         console.log("\n");
 
 
         /* Bonusopdracht: hoogste cijfer */
@@ -148,9 +172,7 @@ console.log("\n");
         function highestGrade(arr) {
             console.log(Math.max(...arr));
         }
-
-        highestGrade(grades);
-
+        console.log(highestGrade(grades));
 
 
 
